@@ -18,6 +18,8 @@
                     <li><a href="#products">Products</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#register">Register</a></li>
+                    <li><a href="#login">Login</a></li>
                 </ul>
             </nav>
         </div>
@@ -63,6 +65,44 @@
                 </div>
             </div>
         </section>
+
+        <section id="register" class="auth-section">
+            <div class="container">
+                <h2>Register</h2>
+                <form action="#" method="post" class="auth-form">
+                    <div class="form-group">
+                        <label for="reg-name">Full Name</label>
+                        <input type="text" id="reg-name" name="fullname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email Address</label>
+                        <input type="email" id="reg-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Password</label>
+                        <input type="password" id="reg-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn">Create Account</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="login" class="auth-section">
+            <div class="container">
+                <h2>Login</h2>
+                <form action="#" method="post" class="auth-form">
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn">Log In</button>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -87,8 +127,88 @@
             console.error('Error loading Embedded Messaging: ', err);
         }
     };
-</script>
-<script type='text/javascript' src='https://orgfarm-c8b884d2ba-dev-ed.develop.my.site.com/ESWGithubMessagingSetti1758288904857/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-</body>
+    </script>
+    <script type='text/javascript' src='https://orgfarm-c8b884d2ba-dev-ed.develop.my.site.com/ESWGithubMessagingSetti1758288904857/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
 
+            const registerForm = document.querySelector('#register .auth-form');
+            const loginForm = document.querySelector('#login .auth-form');
+            const navLinks = document.querySelector('nav ul');
+            const loginLink = document.querySelector('a[href="#login"]');
+            const registerLink = document.querySelector('a[href="#register"]');
+
+            const updateNavForLoggedInUser = (email) => {
+                loginLink.parentElement.remove();
+                registerLink.parentElement.remove();
+
+                const welcomeLi = document.createElement('li');
+                welcomeLi.innerHTML = `<span>Welcome, ${email.split('@')[0]}!</span>`;
+                navLinks.appendChild(welcomeLi);
+
+                const logoutLi = document.createElement('li');
+                logoutLi.innerHTML = `<a href="#" id="logout-btn">Logout</a>`;
+                navLinks.appendChild(logoutLi);
+
+                document.getElementById('logout-btn').addEventListener('click', () => {
+                    localStorage.removeItem('loggedInUser');
+                    window.location.reload(); 
+                });
+            };
+
+            const loggedInUser = localStorage.getItem('loggedInUser');
+            if (loggedInUser) {
+                updateNavForLoggedInUser(loggedInUser);
+            }
+
+            if (registerForm) {
+                registerForm.addEventListener('submit', (event) => {
+                    event.preventDefault(); 
+
+                    const email = document.getElementById('reg-email').value;
+                    const password = document.getElementById('reg-password').value;
+
+                    if (!email || !password) {
+                        alert('Please fill in all fields.');
+                        return;
+                    }
+
+                    const users = JSON.parse(localStorage.getItem('users')) || {};
+
+                    if (users[email]) {
+                        alert('This email is already registered. Please login.');
+                        return;
+                    }
+
+                    users[email] = { password: password };
+                    localStorage.setItem('users', JSON.stringify(users));
+
+                    alert('Registration successful! You can now log in.');
+                    window.location.href = '#login';
+                });
+            }
+
+            if (loginForm) {
+                loginForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+
+                    const email = document.getElementById('login-email').value;
+                    const password = document.getElementById('login-password').value;
+
+                    const users = JSON.parse(localStorage.getItem('users')) || {};
+
+                    if (users[email] && users[email].password === password) {
+                        alert('Login successful!');
+                        localStorage.setItem('loggedInUser', email);
+                        updateNavForLoggedInUser(email);
+                        window.location.href = '#home';
+                    } else {
+                        alert('Invalid email or password.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
 </html>
