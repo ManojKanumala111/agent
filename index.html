@@ -1,336 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waters.com - Advanced Scientific Instruments</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* General Body Styles */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waters.com - Advanced Scientific Instruments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
 
-        /* Header and Navigation */
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #0779e4 3px solid;
-        }
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header .logo {
-            margin: 0;
-            text-transform: uppercase;
-        }
-        header nav ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-        header nav ul li {
-            display: inline;
-            padding: 0 20px;
-        }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        header a:hover {
-            color: #0779e4;
-        }
+        /* Header and Navigation */
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #0779e4 3px solid;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            margin: 0;
+            text-transform: uppercase;
+        }
+        header nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        header nav ul li {
+            display: inline;
+            padding: 0 20px;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        header a:hover {
+            color: #0779e4;
+        }
 
-        /* Hero Section */
-        .hero {
-            background: #f4f4f4;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .hero h2 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
+        /* Hero Section */
+        .hero {
+            background: #f4f4f4;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
 
-        /* Products Section */
-        .products {
-            padding: 40px 0;
-        }
-        .products h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 40px;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .product-card {
-            background: #fff;
-            border: 1px solid #ddd;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .featured-product {
-            margin: 20px 0;
-        }
+        /* Products Section */
+        .products {
+            padding: 40px 0;
+        }
+        .products h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .featured-product {
+            margin: 20px 0;
+        }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background: #0779e4;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            box-sizing: border-box; /* Ensures padding doesn't affect width */
-        }
-        .btn:hover {
-            background: #056ab2;
-        }
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: #0779e4;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+        .btn:hover {
+            background: #056ab2;
+        }
 
-        /* Footer */
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-        }
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
 
-        /* Modal Styles (For Login/Register Pop-ups) */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.5); /* Dim background */
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 10% auto;
-            padding: 30px;
-            border: 1px solid #888;
-            width: 90%;
-            max-width: 400px;
-            border-radius: 8px;
-            position: relative;
-            animation: fadeIn 0.5s;
-        }
-        @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-        .close-btn {
-            color: #aaa;
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            font-size: 35px;
-            font-weight: bold;
-        }
-        .close-btn:hover,
-        .close-btn:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        /* Form Styles */
-        .modal-content h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .modal-content form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .modal-content form input[type="text"],
-        .modal-content form input[type="email"],
-        .modal-content form input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box; /* Important */
-        }
-    </style>
+        /* Modal Styles (For Login/Register Pop-ups) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5); /* Dim background */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 30px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 8px;
+            position: relative;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .close-btn {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Form Styles */
+        .modal-content h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .modal-content form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .modal-content form input[type="text"],
+        .modal-content form input[type="email"],
+        .modal-content form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Important */
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1 class="logo">Waters</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a id="loginLink">Login</a></li>
-                    <li><a id="registerLink">Register</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <header>
+        <div class="container">
+            <h1 class="logo">Waters</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a id="loginLink">Login</a></li>
+                    <li><a id="registerLink">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <main>
-        <section class="hero" id="home">
-            <div class="container">
-                <h2>Pioneering Scientific Solutions</h2>
-                <p>Advancing healthcare delivery, environmental management, food safety, and water quality.</p>
-            </div>
-        </section>
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <h2>Pioneering Scientific Solutions</h2>
+                <p>Advancing healthcare delivery, environmental management, food safety, and water quality.</p>
+            </div>
+        </section>
 
-        <section class="products" id="products">
-            <div class="container">
-                <h2>Our Premier Products</h2>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <h3>Chromatography (LC) Systems</h3>
-                        <p>Our Liquid Chromatography systems offer unparalleled performance for separating, analyzing, and identifying components in a mixture.</p>
-                        <div class="featured-product">
-                            <img src="https://waterscorp-my.sharepoint.com/:i:/r/personal/connman3_partner_waters_com/Documents/Waters%20Folder/Waters1.PNG?csf=1&web=1&e=lgcQum" alt="ACQUITY UPLC" style="max-width: 100%; height: auto;">
-                            <br>
-                            <strong>Featured System:</strong> ACQUITY UPLC
-                        </div>
-                        <button class="btn">Learn More</button>
-                    </div>
+        <section class="products" id="products">
+            <div class="container">
+                <h2>Our Premier Products</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <h3>Chromatography (LC) Systems</h3>
+                        <p>Our Liquid Chromatography systems offer unparalleled performance for separating, analyzing, and identifying components in a mixture.</p>
+                        <div class="featured-product">
+                            <img src="https://waterscorp-my.sharepoint.com/:i:/r/personal/connman3_partner_waters_com/Documents/Waters%20Folder/Waters1.PNG?csf=1&web=1&e=lgcQum" alt="ACQUITY UPLC" style="max-width: 100%; height: auto;">
+                            <br>
+                            <strong>Featured System:</strong> ACQUITY UPLC
+                        </div>
+                        <button class="btn">Learn More</button>
+                    </div>
 
-                    <div class="product-card">
-                        <h3>Mass Spectrometry (MS) Systems</h3>
-                        <p>Unlock new levels of molecular detail. Our Mass Spectrometry systems provide precise mass measurements for complex analyses.</p>
-                        <div class="featured-product">
-                            <img src="https://waterscorp-my.sharepoint.com/:i:/r/personal/connman3_partner_waters_com/Documents/Waters%20Folder/Waters2.PNG?csf=1&web=1&e=GV2jHA" alt="Xevo MS" style="max-width: 100%; height: auto;">
-                            <br>
-                            <strong>Featured System:</strong> Xevo MS
-                        </div>
-                        <button class="btn">Learn More</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+                    <div class="product-card">
+                        <h3>Mass Spectrometry (MS) Systems</h3>
+                        <p>Unlock new levels of molecular detail. Our Mass Spectrometry systems provide precise mass measurements for complex analyses.</p>
+                        <div class="featured-product">
+                            <img src="https://waterscorp-my.sharepoint.com/:i:/r/personal/connman3_partner_waters_com/Documents/Waters%20Folder/Waters2.PNG?csf=1&web=1&e=GV2jHA" alt="Xevo MS" style="max-width: 100%; height: auto;">
+                            <br>
+                            <strong>Featured System:</strong> Xevo MS
+                        </div>
+                        <button class="btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Waters.com | All Rights Reserved.</p>
-        </div>
-    </footer>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Waters.com | All Rights Reserved.</p>
+        </div>
+    </footer>
 
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="closeLogin">&times;</span>
-            <h2>Login</h2>
-            <form action="#">
-                <label for="loginEmail">Email</label>
-                <input type="email" id="loginEmail" placeholder="Enter your email" required>
-                <label for="loginPassword">Password</label>
-                <input type="password" id="loginPassword" placeholder="Enter your password" required>
-                <button type="submit" class="btn">Login</button>
-            </form>
-        </div>
-    </div>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeLogin">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
 
-    <div id="registerModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="closeRegister">&times;</span>
-            <h2>Register</h2>
-            <form action="#">
-                <label for="regName">Full Name</label>
-                <input type="text" id="regName" placeholder="Enter your full name" required>
-                <label for="regEmail">Email</label>
-                <input type="email" id="regEmail" placeholder="Enter your email" required>
-                <label for="regPassword">Password</label>
-                <input type="password" id="regPassword" placeholder="Create a password" required>
-                <button type="submit" class="btn">Create Account</button>
-            </form>
-        </div>
-    </div>
-    
-    <script>
-        // Get modal elements
-        const loginModal = document.getElementById('loginModal');
-        const registerModal = document.getElementById('registerModal');
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeRegister">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <label for="regName">Full Name</label>
+                <input type="text" id="regName" placeholder="Enter your full name" required>
+                <label for="regEmail">Email</label>
+                <input type="email" id="regEmail" placeholder="Enter your email" required>
+                <label for="regPassword">Password</label>
+                <input type="password" id="regPassword" placeholder="Create a password" required>
+                <button type="submit" class="btn">Create Account</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Get modal elements
+        const loginModal = document.getElementById('loginModal');
+        const registerModal = document.getElementById('registerModal');
 
-        // Get button elements that open the modals
-        const loginLink = document.getElementById('loginLink');
-        const registerLink = document.getElementById('registerLink');
+        // Get button elements that open the modals
+        const loginLink = document.getElementById('loginLink');
+        const registerLink = document.getElementById('registerLink');
 
-        // Get span elements that close the modals
-        const closeLogin = document.getElementById('closeLogin');
-        const closeRegister = document.getElementById('closeRegister');
+        // Get span elements that close the modals
+        const closeLogin = document.getElementById('closeLogin');
+        const closeRegister = document.getElementById('closeRegister');
 
-        // When the user clicks the link, open the corresponding modal
-        loginLink.onclick = function() {
-            loginModal.style.display = 'block';
-        }
-        registerLink.onclick = function() {
-            registerModal.style.display = 'block';
-        }
+        // Get form elements
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
 
-        // When the user clicks on <span> (x), close the modal
-        closeLogin.onclick = function() {
-            loginModal.style.display = 'none';
-        }
-        closeRegister.onclick = function() {
-            registerModal.style.display = 'none';
-        }
+        // When the user clicks the link, open the corresponding modal
+        loginLink.onclick = function() {
+            loginModal.style.display = 'block';
+        }
+        registerLink.onclick = function() {
+            registerModal.style.display = 'block';
+        }
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == loginModal) {
-                loginModal.style.display = 'none';
-            }
-            if (event.target == registerModal) {
-                registerModal.style.display = 'none';
-            }
-        }
-    </script>
+        // When the user clicks on <span> (x), close the modal
+        closeLogin.onclick = function() {
+            loginModal.style.display = 'none';
+        }
+        closeRegister.onclick = function() {
+            registerModal.style.display = 'none';
+        }
 
-    <script type='text/javascript'>
-    function initEmbeddedMessaging() {
-        try {
-            embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-            embeddedservice_bootstrap.init(
-                '00DgL00000At96X',
-                'Github_Messaging_Setting',
-                'https://orgfarm-c8b884d2ba-dev-ed.develop.my.site.com/ESWGithubMessagingSetti1758288904857',
-                {
-                    scrt2URL: 'https://orgfarm-c8b884d2ba-dev-ed.develop.my.salesforce-scrt.com'
-                }
-            );
-        } catch (err) {
-            console.error('Error loading Embedded Messaging: ', err);
-        }
-    };
-    </script>
-    <script type='text/javascript' src='https://orgfarm-c8b884d2ba-dev-ed.develop.my.site.com/ESWGithubMessagingSetti1758288904857/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == loginModal) {
+                loginModal.style.display = 'none';
+            }
+            if (event.target == registerModal) {
+                registerModal.style.display = 'none';
+            }
+        }
+
+        // NEW: Handle registration form submission
+        registerForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page from reloading
+
+            const regName = document.getElementById('regName').value;
+            const regEmail = document.getElementById('regEmail').value;
+            const regPassword = document.getElementById('regPassword').value;
+
+            // Retrieve existing users or create a new object
+            const users = JSON.parse(localStorage.getItem('users')) || {};
+
+            // Check if the email already exists
+            if (users[regEmail]) {
+                alert('❌ This email is already registered. Please login or use a different email.');
+            } else {
+                // Register the new user
+                users[regEmail] = { password: regPassword, name: regName };
+                localStorage.setItem('users', JSON.stringify(users));
+
+                alert('✅ Registration successful! You can now log in.');
+
+                // Close the register modal and open the login modal
+                registerModal.style.display = 'none';
+                loginModal.style.display = 'block';
+                loginForm.reset(); // Clear login form fields
+                loginEmail.value = regEmail; // Pre-fill the email
+            }
+            
+            registerForm.reset(); // Clear register form fields
+        });
+
+        // NEW: Handle login form submission
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page from reloading
+
+            const loginEmail = document.getElementById('loginEmail').value;
+            const loginPassword = document.getElementById('loginPassword').value;
+
+            const users = JSON.parse(localStorage.getItem('users')) || {};
+
+            // Check if user exists and password matches
+            if (users[loginEmail] && users[loginEmail].password === loginPassword) {
+                alert('✅ Login successful!');
+                loginModal.style.display = 'none'; // Close modal on success
+                loginForm.reset(); // Clear form fields
+            } else {
+                alert('❌ Invalid email or password.');
+            }
+        });
+    </script>
+
+    <script type='text/javascript'>
+        function initEmbeddedMessaging() {
+            try {
+                embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+                embeddedservice_bootstrap.init(
+                    '00DgL00000At96X',
+                    'Github_Messaging_Setting',
+                    'https://orgfarm-c8b884d2ba-dev-ed.develop.my.site.com/ESWGithubMessagingSetti1758288904857',
+                    {
+                        scrt2URL: 'https://orgfarm-c8b884d2ba-dev-ed.develop.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
+        };
+    </script>
+    <script type='text/javascript' src='https://orgfarm-c8b884d2ba-dev-ed.develop.my.site.com/ESWGithubMessagingSetti1758288904857/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 </body>
 </html>
